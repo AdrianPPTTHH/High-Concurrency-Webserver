@@ -136,41 +136,6 @@ void* Threadpool::manager(){
     return NULL;
 }
 
-
-// T&& 通用引用，既可以传入左值引用又可以传入右值引用  如果需要参数可以使用std::bind() 返回一个右值引用
-// template <class T>
-// void Threadpool::threadPoolAdd(T&& func){
-// // void Threadpool::threadPoolAdd(void(*func)(void *), void*arg){
-//     std::unique_lock<std::mutex> my_unique_lock(mutexPool);
-    
-//     while(queueSize != queueCapacity && !shutdown){
-//         notFull.wait(my_unique_lock, [this](){
-//             return queueSize < queueCapacity;
-//         });
-
-//         if(shutdown){
-//             my_unique_lock.unlock();
-//             return;
-//         }
-        
-//         // Task temp_t;
-//         // temp_t.function = func;
-//         // temp_t.arg = arg;
-        
-//         // taskQ.push(temp_t);
-        
-//         taskQ.push(func);
-//         queueSize++;
-//         my_unique_lock.unlock();
-        
-//         notEmpty.notify_one();
-//         break;
-//     }
-    
-// }
-
-
-
 // 销毁池函数
 int Threadpool::threadPoolDestroy(){
 
