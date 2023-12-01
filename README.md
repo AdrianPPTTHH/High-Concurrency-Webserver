@@ -14,7 +14,7 @@ sudo iptables -A INPUT -p tcp --dport 8876 -j ACCEPT
 sudo apt-get install libmysqlclient-dev  
 sudo apt-get install default-libmysqlclient-dev  
   
-添加用户:
+添加用户:  
  //%是通配符 表示所有地址连接webserver都可以 也可以写localhost  
 CREATE USER 'web_admin'@'%' IDENTIFIED BY 'password';  
   
